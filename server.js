@@ -8,6 +8,14 @@ const myApp = require('./myApp');
 const express = require('express');
 const app = express();
 
+app.get('/', (req, res) => {
+  res.send('Welcome to My App!');
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});
+
 if (!process.env.DISABLE_XORIGIN) {
   app.use((req, res, next) => {
     const allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
